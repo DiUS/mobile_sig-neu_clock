@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:neu_clock/core/theme/app_theme.dart';
+import 'package:neu_clock/presentation/screens/clock_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,12 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Neu Clock',
       theme: appThemeData(),
-      home: Container(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        child: Center(
-          child: Text('Neu Clock'),
-        ),
-      ),
+      home: ClockScreen(),
     );
   }
 }
