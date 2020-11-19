@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:neu_clock/presentation/widgets/clock.dart';
 
 class ClockScreen extends StatelessWidget {
   @override
@@ -29,10 +30,8 @@ class ClockScreen extends StatelessWidget {
             children: [
               Container(
                 height: 300,
-                color: Colors.blue[400],
-                child: Center(
-                  child: Text('ClockFace'),
-                ),
+               
+                child: Clock(clockFaceSize: 250),
               ),
               Container(
                 height: 200,
