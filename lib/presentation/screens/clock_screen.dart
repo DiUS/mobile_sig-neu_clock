@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:neu_clock/models/alarm.dart';
+import 'package:neu_clock/presentation/widgets/alarm_list.dart';
 import 'package:neu_clock/presentation/widgets/clock.dart';
 
 class ClockScreen extends StatelessWidget {
@@ -36,9 +38,9 @@ class ClockScreen extends StatelessWidget {
               Container(
                 height: 200,
                 child: Center(
-                  child: Text('Time List'),
+                  child: AlarmList(alarms: alarmList()..sort((a,b) => a.comparedTo(b))),
                 ),
-                color: Colors.amber[400],
+                
               ),
               Expanded(child: Container()),
               Container(
@@ -55,3 +57,10 @@ class ClockScreen extends StatelessWidget {
     );
   }
 }
+
+ List<Alarm> alarmList() => <Alarm>[
+   Alarm(time: TimeOfDay(hour: 6, minute: 25), enabled: true),
+   Alarm(time: TimeOfDay(hour: 19, minute: 15), enabled: false),
+   Alarm(time: TimeOfDay(hour: 7, minute: 45), enabled: true),
+   
+ ];
