@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class Clock extends StatelessWidget {
   final double clockFaceSize;
@@ -26,12 +27,15 @@ class _FlatCircleClockFace extends StatelessWidget {
       height: size,
       width: size,
       child: Stack(
-        
         children: [
           //outer circle
-          _ClockCircle(height: size,),
+          _ClockCircle(
+            height: size,
+          ),
           //inner circle
-          _ClockCircle(height: innercircleDiameter, ),
+          _ClockCircle(
+            height: innercircleDiameter,
+          ),
           // minute hand
           Align(
             alignment: Alignment(0.0, -0.5),
@@ -46,7 +50,7 @@ class _FlatCircleClockFace extends StatelessWidget {
             alignment: Alignment(0.4, 0.0),
             child: Container(
               height: 3,
-              width: innerCircleRadius + 16 ,
+              width: innerCircleRadius + 16,
               color: Colors.grey[400],
             ),
           ),
@@ -89,10 +93,15 @@ class _ClockCircle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.center,
-      child: Container(
-          height: height,
-          width: width ?? height,
-          decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
+      child: Neumorphic(
+        style: NeumorphicStyle(
+            shape: NeumorphicShape.concave,
+            boxShape: NeumorphicBoxShape.circle()),
+        child: Container(
+            height: height,
+            width: width ?? height,
+            decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
+      ),
     );
   }
 }
