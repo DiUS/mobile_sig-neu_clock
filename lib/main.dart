@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:neu_clock/core/theme/app_theme.dart';
 import 'package:neu_clock/presentation/screens/clock_screen.dart';
 
 void main() {

@@ -22,13 +22,17 @@ class ClockScreen extends StatelessWidget {
         // elevation: 0,
         actions: [
           NeumorphicButton(
-            margin: EdgeInsets.only(top: 4),
+            // margin: EdgeInsets.only(top: 4),
+            style: NeumorphicStyle(
+               boxShape: NeumorphicBoxShape.circle(),
+            ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.only(top: 12),
               child: NeumorphicIcon(
                 Icons.settings,
                 size: 32,
                 style: NeumorphicStyle(
+                 
                     color:
                         NeumorphicTheme.currentTheme(context).defaultTextColor),
               ),

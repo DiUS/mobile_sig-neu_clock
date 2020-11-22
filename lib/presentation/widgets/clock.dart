@@ -94,11 +94,10 @@ class _ClockCircle extends StatelessWidget {
     return Align(
       alignment: Alignment.center,
       child: Neumorphic(
-            style: NeumorphicStyle(
-              shape: NeumorphicShape.concave,
-              boxShape: NeumorphicBoxShape.circle()
-            ),
-              child: Container(
+        style: NeumorphicStyle(
+            shape: NeumorphicShape.concave,
+            boxShape: NeumorphicBoxShape.circle()),
+        child: Container(
             height: height,
             width: width ?? height,
             decoration: BoxDecoration(shape: BoxShape.circle, color: color)),
