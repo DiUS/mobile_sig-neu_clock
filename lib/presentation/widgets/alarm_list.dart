@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:neu_clock/models/alarm.dart';
 
 class AlarmList extends StatelessWidget {
@@ -23,31 +24,31 @@ class _AlarmCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-        Card(
-          color: Theme.of(context).backgroundColor,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-          margin: EdgeInsets.symmetric(horizontal: 48, vertical: 12),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text(
-                  alarm.time.format(context),
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                    color: Theme.of(context).primaryColor,
-                  ),
-                ),
-                
-                Switch(
-                    value: alarm.enabled,
-                    onChanged: (bool val) => {print('Changed to $val')}),
-              ],
+    return Neumorphic(
+      margin: EdgeInsets.symmetric(horizontal: 48, vertical: 12),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Text(
+              alarm.time.format(context),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                color: Theme.of(context).primaryColor,
+              ),
             ),
-          ),
-        );
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: NeumorphicSwitch(
+                height: 32,
+                  value: alarm.enabled,
+                  onChanged: (bool val) => {print('Changed to $val')}),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
