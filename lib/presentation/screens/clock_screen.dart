@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:neu_clock/models/alarm.dart';
 import 'package:neu_clock/presentation/widgets/alarm_list.dart';
+import 'package:neu_clock/presentation/widgets/bottom_nav_bar.dart';
 import 'package:neu_clock/presentation/widgets/clock.dart';
 
 class ClockScreen extends StatelessWidget {
@@ -45,10 +46,7 @@ class ClockScreen extends StatelessWidget {
               Expanded(child: Container()),
               Container(
                 height: 60,
-                child: Center(
-                  child: Text('Bottom Button Row'),
-                ),
-                color: Colors.pink[400],
+                child: BottomNavBar(),
               )
             ],
           ),
